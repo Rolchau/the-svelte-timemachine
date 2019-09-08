@@ -1,0 +1,7 @@
+# Project dependencies
+node_modules
+
+# Build directory
+/public/*
+!/public/assets*
+.DS_Store
