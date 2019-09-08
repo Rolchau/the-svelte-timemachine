@@ -4,10 +4,9 @@
   import LegoFigure from './LegoFigure.svelte';
 
   let startTardis = false;
-  let figureOffsetTop = 0;
 
   onMount(() => {
-    console.log(legoDom);
+    
   });
 
   function timeMachineIsReady() {
@@ -21,9 +20,8 @@
 </script>
 
 <div class="scene-wrapper">
-  <h1>Offset: {figureOffsetTop}</h1>
   <div class="scene-figure-container">
-    <div class="speech-bobble">Lorem ipsum dolor sit amet.</div>
+    <div class="speech-bobble">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas recusandae nesciunt nihil dolorum repudiandae. Repellat suscipit recusandae quibusdam nisi at earum vitae ducimus cum, modi deleniti dicta dolor, iusto est.</div>
     <LegoFigure inside={false} on:done-talking={createTimeMachine}></LegoFigure>
   </div>
   <div class="scene-tardis-container">
@@ -60,5 +58,25 @@
     height: 4px;
     background-color: var(--text-color);
     box-shadow: 0 0 6px var(--text-color);
+  }
+
+  .speech-bobble {
+    width: 300px;
+    max-width: 100vw;  
+    padding: 1rem;
+    border-radius: 30px;
+    position: absolute;
+    left: 70px;
+    bottom: 360px;
+    background-color: white;
+    color: #333;
+  }
+  .speech-bobble:after {
+    content: "";
+    border: 20px solid transparent;
+    border-left-color: white;
+    position: absolute;
+    left: 120px;
+    bottom: -20px;
   }
 </style>

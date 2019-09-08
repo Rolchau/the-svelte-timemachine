@@ -12,8 +12,6 @@
     }, 2000)
   }
 
-  let height = 0;
-
   onMount(()=> {
     startTalking();
   });
@@ -42,7 +40,6 @@
     <div class="legoman__right-leg"></div>
   </div>
 </div>
-<h1>{height}</h1>
 
 <style>
   .legoman {

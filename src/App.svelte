@@ -3,7 +3,7 @@
 </svelte:head>
 
 <script>
-	import { scene, count, doubled } from './scene-store.js';
+	import { scene } from './scene-store.js';
 	import { onMount } from 'svelte';
 	import MrComputer from './MrComputer.svelte';
 	import Cloud from './Cloud.svelte';
