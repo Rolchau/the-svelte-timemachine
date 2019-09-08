@@ -1,31 +1,52 @@
 <script>
-  import { onMount } from 'svelte';
+  import { scene } from './scene-store.js';
+  import { tweened } from 'svelte/motion';
   import Tardis from './Tardis.svelte';
   import LegoFigure from './LegoFigure.svelte';
 
   let startTardis = false;
-
-  onMount(() => {
-    
-  });
+  let tardisReady = false;
 
   function timeMachineIsReady() {
-    
+    tardisReady = true;
   }
 
   function createTimeMachine() {
     startTardis = true;
   }
 
+  const rotation = tweened(0, {
+    duration: 300
+  });
+
+  const scale = tweened(1, {
+    duration: 300
+  });
+
+  const opacity = tweened(1, {
+    duration: 500
+  });
+  
+  async function onClick() {
+    if (tardisReady) {
+      rotation.set(970);
+      scale.set(12);
+      await opacity.set(0);
+      scene.set(8);
+    }
+  }
+
+
+
 </script>
 
-<div class="scene-wrapper">
+<div class="scene-wrapper" style="opacity: {$opacity}">
   <div class="scene-figure-container">
     <div class="speech-bobble">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas recusandae nesciunt nihil dolorum repudiandae. Repellat suscipit recusandae quibusdam nisi at earum vitae ducimus cum, modi deleniti dicta dolor, iusto est.</div>
     <LegoFigure inside={false} on:done-talking={createTimeMachine}></LegoFigure>
   </div>
-  <div class="scene-tardis-container">
-    <Tardis start={startTardis} on:done-drawing={timeMachineIsReady}></Tardis>
+  <div class="scene-tardis-container" style="transform: rotate({$rotation}deg) scale({$scale})">
+    <Tardis start={startTardis} on:done-drawing={timeMachineIsReady} on:click={onClick}></Tardis>
   </div>
   <div class="scene__ground"></div>
 </div>
@@ -38,6 +59,7 @@
     height: 100vh;
     width: 100vw;
     background-color: var(--glass-color);
+    overflow: hidden;
   }
 
   .scene-figure-container,

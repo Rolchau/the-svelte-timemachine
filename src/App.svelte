@@ -10,28 +10,23 @@
 	import Brick from './Brick.svelte';
 	import Monitor from './Monitor.svelte';
 	import TimeMachine from './TimeMachine.svelte';
+	import Past from './Past.svelte';
+	import Present from './Present.svelte'; 
 	
-	let visible = false;
-	
-	const unsubscribe = scene.subscribe(value => {
-		console.log(value);
-	});
-
 	onMount(() => {
-		visible = true;
-		scene.set(7);
+		scene.set(8);
 	}); 
 
 </script>
 
-{#if false}
+{#if $scene >= 0 && $scene < 3}
 <div class="lego-constrainer">
 	<h1>Hi!</h1>
 	<div class="scene-wrapper">
 		<!-- TODO - Should maybe add scene components here -->
-		<MrComputer {visible}></MrComputer>
+		<MrComputer></MrComputer>
 		<div class="cloud-brick-container">
-			<Cloud {visible}></Cloud>
+			<Cloud></Cloud>
 			<Brick></Brick>
 		</div>
 	</div>
@@ -43,12 +38,12 @@
 {#if $scene === 7}
 	<TimeMachine/>
 {/if}
-
-<label>
-	<input type="text" bind:value={$scene} />
-	visible
-</label>
-<p>Which scene: { $scene } </p>
+{#if $scene === 8}
+	<Past></Past>
+{/if}
+{#if $scene === 9}
+	<Present></Present>
+{/if}
 
 <style>
 	:root {

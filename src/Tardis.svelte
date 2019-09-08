@@ -97,7 +97,7 @@
 {#await makeBoxShadow() then }
 	<img class="pointing-finger" alt="Finger pointing left" src="assets/point-left.svg" />
 {/await}
-<div class="tardis-wrapper">
+<div class="tardis-wrapper" on:click>
 	<div class="tardis-top" style="box-shadow:{boxShadowString}"></div>
 </div>
 {/if}
