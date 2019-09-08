@@ -70,6 +70,10 @@
     bottom: 360px;
     background-color: white;
     color: #333;
+    transform-origin: 30% 100%;
+    opacity: 0;
+    transform: scale(0);
+    animation: talk 0.2s cubic-bezier(0.01, 1.24, 0.24, 1.21) 0.5s forwards;
   }
   .speech-bobble:after {
     content: "";
@@ -78,5 +82,12 @@
     position: absolute;
     left: 120px;
     bottom: -20px;
+  }
+
+  @keyframes talk {
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 </style>
