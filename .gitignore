@@ -4,4 +4,7 @@ node_modules
 # Build directory
 /public/*
 !/public/assets*
+!/public/index.html
+!/public/global.css
+!/public/favicon.png
 .DS_Store
