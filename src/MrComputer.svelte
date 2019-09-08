@@ -4,11 +4,9 @@
   import { sineOut } from 'svelte/easing';
   import { fade } from 'svelte/transition';
 
-  export let visible = false;
-
   let srcStale = 'assets/mr-computer-stale.gif';
   let srcMoving = 'assets/mr-computer-moving.gif';
-  $:sliding = visible;
+  let sliding = true;
   $:slowSliding = !sliding;
 
   function movingDone() {
@@ -32,7 +30,7 @@
   }  
 </script>
 
-{#if visible && $scene <= 2}
+{#if $scene <= 2}
 <div class="computer__wrapper" in:slidein on:introend={movingDone} out:fade>
   {#if sliding}
   <img 

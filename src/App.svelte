@@ -14,7 +14,7 @@
 	import Present from './Present.svelte'; 
 	
 	onMount(() => {
-		scene.set(8);
+		scene.set(0);
 	}); 
 
 </script>
