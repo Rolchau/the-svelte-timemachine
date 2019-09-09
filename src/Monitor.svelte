@@ -21,16 +21,16 @@
 <div class="monitor" in:fade out:fade on:introend={() => scene.set(4)} >
   <div class="monitor__glass">
     {#if $scene === 4}
-      <p in:typewriter|local on:introend={() => scene.set(5)}>
-        1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, ea!
+      <p in:typewriter|local={{speed: 80}} on:introend={() => scene.set(5)}>
+        Hi Lego, thank you very much for your time. I hope the time you spend here      - 
       </p>
     {:else if $scene === 5}
-    <p in:typewriter|local on:introend={() => scene.set(6)}>
-      2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ratione qui at dignissimos aspernatur optio eius repellendus nam perferendis obcaecati!
+    <p in:typewriter|local={{speed: 80}} on:introend={() => scene.set(6)}>
+      will convince you that I am the right candidate for the position as a Frontend Developer on LEGO.com       -
     </p>
     {:else if $scene === 6}
     <p in:typewriter|local={{speed: 100}} on:introend={() => scene.set(7)}>
-      6. Lorem ipsum dolor sit amet........
+      The little Lego fellow here, will take you on a journey back in time.              -
     </p>
     {/if}
     {#if $scene === 5 || $scene ===6} 
@@ -47,16 +47,27 @@
     --line-color: #256825;
     --monitor-width: 600px;
   }
+  
   .monitor {
     width: var(--monitor-width);
-    height: 600px;
-    margin: 0 auto;
-    padding: 3em;
+    height: var(--monitor-width);
+    max-width: 100vw;
+    max-height: 100vh;
+    padding: 2em;
     box-sizing: border-box;
     position: relative;
     transition: transform 0.2s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
   }
 
+  @media only screen and (min-width: 410px) {
+    .monitor {
+      padding: 3em;
+    }
+  }
   .monitor:after,
   .monitor__glass:before {
     background-repeat: no-repeat;
@@ -70,6 +81,7 @@
 
   .monitor:after {
     background-image: url('./assets/lego-monitor.png');
+    background-size: 100% 100%;
   }
 
   .monitor__glass:before {

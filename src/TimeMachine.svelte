@@ -1,6 +1,8 @@
 <script>
   import { scene } from './scene-store.js';
+  import { onMount } from 'svelte';
   import { tweened } from 'svelte/motion';
+  import { scale } from 'svelte/transition';
   import Tardis from './Tardis.svelte';
   import LegoFigure from './LegoFigure.svelte';
 
@@ -19,7 +21,7 @@
     duration: 300
   });
 
-  const scale = tweened(1, {
+  const scaling = tweened(1, {
     duration: 300
   });
 
@@ -30,22 +32,20 @@
   async function onClick() {
     if (tardisReady) {
       rotation.set(970);
-      scale.set(12);
+      scaling.set(12);
       await opacity.set(0);
       scene.set(8);
     }
   }
 
-
-
 </script>
 
-<div class="scene-wrapper" style="opacity: {$opacity}">
+<div class="scene-wrapper" style="opacity: {$opacity}" in:scale={{duration: 200, opacity: 0.5}}>
   <div class="scene-figure-container">
-    <div class="speech-bobble">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas recusandae nesciunt nihil dolorum repudiandae. Repellat suscipit recusandae quibusdam nisi at earum vitae ducimus cum, modi deleniti dicta dolor, iusto est.</div>
+    <div class="speech-bobble">Hi there! I created a time traveling machine made entirely out of CSS shadows. Try it!</div>
     <LegoFigure inside={false} on:done-talking={createTimeMachine}></LegoFigure>
   </div>
-  <div class="scene-tardis-container" style="transform: rotate({$rotation}deg) scale({$scale})">
+  <div class="scene-tardis-container" style="transform: rotate({$rotation}deg) scale({$scaling})">
     <Tardis start={startTardis} on:done-drawing={timeMachineIsReady} on:click={onClick}></Tardis>
   </div>
   <div class="scene__ground"></div>

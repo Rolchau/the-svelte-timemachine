@@ -5,70 +5,72 @@
   const quantSrc = 'assets/quant-app.jpg'
 </script>
 
-<div class="page" in:fly="{{duration: 300, y: 200, opacity: 0}}">
-  <div class="lego-hero">
-    <div class="lego-wrapper">
-      <h1>Yes, it was terrible!</h1>
-      <p>And I jumped on the Java train instead for a couple of years, but I never lost interest in web development. </p>
-      <p>Around <a href="https://web.archive.org/web/20070711090643/http://www.rolchau.dk/about/index.html">2006</a> I had another go at it. At that time Firefox was the name of my browser, my code should pass the dreaded W3C validator and I hated IE6
-        like everybody else, but very determined I put all my strength in learning frontend developement, and I fell very much in love with it. Haven't looked back since. 
-      </p>
-      <h2>
-        Some references
-      </h2>
-      <p>
-        Thank you for taking your time to get through this little time journey. You can find the code to the journey on my <a href="https://github.com/Rolchau/lego">github page</a>. It was made with <a href="https://www.gatsbyjs.org/">GatsbyJS</a> and React.
-      </p>
-      <p>Sadly, much of my work is behind closed doors at Jyskebank, but here are a few examples of what I have worked with:</p>
-    </div>
-  </div>
-  <div class="reference-wrapper">
-    <div class="reference-box">
-      <h2>Quant Score - Vanilla ES6 webapp</h2>
-      <p>I implemented the complete frontend part. Data is fetched with JSON from a Java backend.</p>
-      <img src={quantSrc} class="reference-img" alt="Quant Web App example"/>
-      <div class="flex-wrapper">
-        <h4>Technology stack</h4>
-        <ul>
-          <li><a href="http://vanilla-js.com/">VanillaJS</a></li>
-          <li>Webpack & Grunt</li>
-          <li>Pug for template files</li>
-          <li>SASS for CSS</li>
-          <li>BEM for CSS structuring</li>
-        </ul>
-        <a href="https://jyske-bank.surge.sh/WebContent/resources/_examples/jyskebank-flex/50-quant.html">Example &raquo;</a>
+<div class="flex-wrapper">
+  <div class="page" in:fly="{{duration: 300, y: 200, opacity: 0}}">
+    <div class="lego-hero">
+      <div class="lego-wrapper">
+        <h1>Yes, it was terrible!</h1>
+        <p>And I jumped on the Java train instead for a couple of years, but I never lost interest in web development. </p>
+        <p>Around <a href="https://web.archive.org/web/20070711090643/http://www.rolchau.dk/about/index.html">2006</a> I had another go at it. At that time Firefox was the name of my browser, my code should pass the dreaded W3C validator and I hated IE6
+          like everybody else, but very determined I put all my strength in learning frontend developement, and I fell very much in love with it. Haven't looked back since. 
+        </p>
+        <h2>
+          Some references
+        </h2>
+        <p>
+          Thank you for taking your time to get through this little time journey. You can find the code to the journey on my <a href="https://github.com/Rolchau/the-svelte-timemachine">github page</a>. It was made with <a href="https://svelte.dev/">Svelte (a new tool for making web apps, that I wanted to try out)</a>.
+        </p>
+        <p>Sadly, much of my work is behind closed doors at Jyskebank, but here are a few examples of what I have worked with:</p>
       </div>
     </div>
-    <div class="reference-box">
-      <h2>Loan calculator - PreactJS webapp</h2>
-      <p>I implemented the frontend together with a developer from DesignIt. Data is delivered by a JSP Servlet.</p>
-      <img src={boligSrc} class="reference-img" alt="Boligberegner eksempel"/>
-      <div class="flex-wrapper">
-        <h4>Technology stack</h4>
-        <ul>
-          <li><a href="https://preactjs.com/">PreactJS</a></li>
-          <li>Webpack & Grunt</li>
-          <li>Pug for template files</li>
-          <li>SASS for CSS</li>
-          <li>BEM/Smacss for CSS structuring</li>
-        </ul>
-        <a href="https://www.jyskebank.dk/bolig/regn-paa-bolig/beregn-laan-til-ny-bolig">Example &raquo;</a>
+    <div class="reference-wrapper">
+      <div class="reference-box">
+        <h2>Quant Score - Vanilla ES6 webapp</h2>
+        <p>I implemented the complete frontend part. Data is fetched with JSON from a Java backend.</p>
+        <img src={quantSrc} class="reference-img" alt="Quant Web App example"/>
+        <div class="flex-wrapper">
+          <h4>Technology stack</h4>
+          <ul>
+            <li><a href="http://vanilla-js.com/">VanillaJS</a></li>
+            <li>Webpack & Grunt</li>
+            <li>Pug for template files</li>
+            <li>SASS for CSS</li>
+            <li>BEM for CSS structuring</li>
+          </ul>
+          <a href="https://jyske-bank.surge.sh/WebContent/resources/_examples/jyskebank-flex/50-quant.html">Example &raquo;</a>
+        </div>
+      </div>
+      <div class="reference-box">
+        <h2>Loan calculator - PreactJS webapp</h2>
+        <p>I implemented the frontend together with a developer from DesignIt. Data is delivered by a JSP Servlet.</p>
+        <img src={boligSrc} class="reference-img" alt="Boligberegner eksempel"/>
+        <div class="flex-wrapper">
+          <h4>Technology stack</h4>
+          <ul>
+            <li><a href="https://preactjs.com/">PreactJS</a></li>
+            <li>Webpack & Grunt</li>
+            <li>Pug for template files</li>
+            <li>SASS for CSS</li>
+            <li>BEM/Smacss for CSS structuring</li>
+          </ul>
+          <a href="https://www.jyskebank.dk/bolig/regn-paa-bolig/beregn-laan-til-ny-bolig">Example &raquo;</a>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="lego-hero">
-    <div class="lego-wrapper">
-      <h1>Hoping to hear from you!</h1>
-      <div class="about-wrapper">
-        <dl>
-          <dt><small>Phone</small></dt>
-          <dd>21 93 21 79</dd>
-          <dt><small>Email</small></dt>
-          <dd>rolchau@gmail.com</dd>
-        </dl>
-        <img src={migSrc} class="about-img" alt="Tommy R. Mathiesen og his daughter Alva"/>
+    <div class="lego-hero">
+      <div class="lego-wrapper">
+        <h1>Hoping to hear from you!</h1>
+        <div class="about-wrapper">
+          <dl>
+            <dt><small>Phone</small></dt>
+            <dd>21 93 21 79</dd>
+            <dt><small>Email</small></dt>
+            <dd>rolchau@gmail.com</dd>
+          </dl>
+          <img src={migSrc} class="about-img" alt="Tommy R. Mathiesen og his daughter Alva"/>
+        </div>
+        <p>Kind regards, Tommy Rolchau Mathiesen</p>
       </div>
-      <p>Kind regards, Tommy Rolchau Mathiesen</p>
     </div>
   </div>
 </div>
@@ -76,8 +78,12 @@
 <style>
 .page {
   color: #333;
-  background-image: linear-gradient(rgba(0,0,0,0.71),rgba(0,0,0,0.14)),url(assets/code-bg.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0.71),rgba(0,0,0,0.14)),url('assets/code-bg.jpg');
   background-attachment: fixed;  
+}
+
+.flex-wrapper {
+  height: 100%;
 }
 
 .lego-hero {

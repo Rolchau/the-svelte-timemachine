@@ -31,7 +31,7 @@
     </table>
     <br/>
     <p>
-      <a href="javascript:void(0)" on:click={() => scene.set(9)} style="color: red; font-size: 24px">Ok, seen enough! Let's get out of here</a>
+      <button on:click={() => scene.set(9)} style="color: red; font-size: 24px">Ok, enough 1999! Let's get out of here</button>
     </p>
 
   </center>

@@ -65,9 +65,9 @@
   }
 
   .computer__wrapper {
-    height: 100px;
-    width: 100px;
-    min-width: 100px;
+    height: 150px;
+    width: 150px;
+    min-width: 150px;
     position: relative;
     align-self: flex-start;
   }

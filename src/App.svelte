@@ -21,7 +21,6 @@
 
 {#if $scene >= 0 && $scene < 3}
 <div class="lego-constrainer">
-	<h1>Hi!</h1>
 	<div class="scene-wrapper">
 		<!-- TODO - Should maybe add scene components here -->
 		<MrComputer></MrComputer>
@@ -55,32 +54,33 @@
 		background-color: var(--body-bg);
 		color: var(--body-fg);
 		transition: color 100ms ease-in-out;
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+    justify-content: center;
 	}
 	
 	.lego-constrainer {
+		flex: 1 0 auto;
+		width: 100%;
 		max-width: var(--page-max-width);
-		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		overflow: hidden;
+		align-self: center;
 	}
 
 	.scene-wrapper {
 		display: flex;
 		flex-direction: row;
 		width: 100%;
-		justify-content: flex-start;
+		justify-content: center;
 	}
 
 	.cloud-brick-container {
 		display: grid;
-	}
-
-	h1 {
-		font-size: 3rem;
-		text-align: center;
 	}
 </style>
 
